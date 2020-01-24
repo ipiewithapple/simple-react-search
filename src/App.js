@@ -7,12 +7,8 @@ class App extends Component {
 
   state = {
     cars: this.props.cars,
-    searchCars: []
+    searchCars: this.props.cars
   }
-
-  componentWillMount() {
-    this.setState({searchCars: this.state.cars});
-}
 
   oninputChange = (e) => {
     const searchQuery = e.target.value.toLowerCase();
