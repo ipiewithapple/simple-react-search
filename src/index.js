@@ -8,7 +8,7 @@ const cars = [
   {name: 'Ford', year: 2018},
   {name: 'Audi', year: 2016},
   {name: 'BMW', year: 2018},
-  {name: 'Porche', year: 2020}
+  {name: 'Porsche', year: 2020}
 ];
 
 ReactDOM.render(<App cars={cars} />, document.getElementById('root'));

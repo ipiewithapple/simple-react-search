@@ -7,10 +7,10 @@ class App extends Component {
 
   state = {
     cars: this.props.cars,
-    searchCars: this.props.cars
+    searchCars: []
   }
 
-  oninputChange = (e) => {
+  onInputChange = (e) => {
     const searchQuery = e.target.value.toLowerCase();
     let searchCars = this.state.cars;
     searchCars = searchCars.filter((car) => {
@@ -22,7 +22,12 @@ class App extends Component {
       searchCars: searchCars
     })
 
-    
+  }
+
+  componentWillMount() {
+    this.setState({
+      searchCars: this.state.cars
+    })
   }
 
   render() {
@@ -34,7 +39,7 @@ class App extends Component {
 
     return (
       <div style={divStyle}>
-        <input type="text" onChange={this.oninputChange}></input>
+        <input type="text" onChange={this.onInputChange}></input>
         {this.state.searchCars.map((car, i) => {
           return (
             <Car name={car.name} year={car.year} key={i} />
